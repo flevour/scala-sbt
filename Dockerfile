@@ -1,6 +1,7 @@
 #
 # Scala and sbt Dockerfile
 #
+# Original repo:
 # https://github.com/hseeberger/scala-sbt
 #
 
