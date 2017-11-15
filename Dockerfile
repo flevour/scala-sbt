@@ -5,11 +5,11 @@
 #
 
 # Pull base image
-FROM openjdk:8u151
+FROM openjdk:8u131-alpine
 
 # Env variables
 ENV SCALA_VERSION 2.12.4
-ENV SBT_VERSION 1.0.2
+ENV SBT_VERSION 0.13.16
 
 # Scala expects this file
 RUN touch /usr/lib/jvm/java-8-openjdk-amd64/release
@@ -31,4 +31,4 @@ RUN \
   sbt sbtVersion
 
 # Define working directory
-WORKDIR /root
+WORKDIR /app
