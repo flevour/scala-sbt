@@ -78,3 +78,13 @@ RUN \
 
 # Define working directory
 WORKDIR /app
+
+# Trigger compiler-interface compilation
+RUN \
+  mkdir -p project src/main/scala && \
+  echo "sbt.version = ${SBT_VERSION}" > project/build.properties && \
+  echo "scalaVersion := \"${SCALA_VERSION}\"" > build.sbt && \
+  touch src/main/scala/scratch.scala && \
+  sbt compile && \
+  rm -rf *
+
