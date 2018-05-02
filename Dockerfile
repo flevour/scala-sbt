@@ -11,12 +11,12 @@ FROM alpine:3.6
 # Env variables
 # Java
 # Find values here: http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html
-ENV JAVA_VERSION=8 JAVA_UPDATE=152 JAVA_BUILD=16 OTN_HASH=aa0333dd3019491ca4f6ddbe78cdb6d0 JAVA_PACKAGE=server-jre JAVA_HOME=/usr/lib/jvm/default-jvm
+ENV JAVA_VERSION=8 JAVA_UPDATE=171 JAVA_BUILD=11 OTN_HASH=512cd62ec5174c3487ac17c61aaa89e8 JAVA_PACKAGE=server-jre JAVA_HOME=/usr/lib/jvm/default-jvm
 ENV PATH=${PATH}:${JAVA_HOME}/bin
 
 # Scala
-ENV SCALA_VERSION 2.12.4
-ENV SBT_VERSION 0.13.16
+ENV SCALA_VERSION 2.12.6
+ENV SBT_VERSION 1.1.2
 ENV SBT_HOME /usr/local/sbt
 ENV PATH ${PATH}:${SBT_HOME}/bin
 
