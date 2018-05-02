@@ -73,7 +73,7 @@ RUN \
 # Install sbt
 RUN \
       mkdir -p "$SBT_HOME" && \
-      wget -qO - --no-check-certificate "https://cocl.us/sbt-$SBT_VERSION.tgz" | tar xz -C $SBT_HOME --strip-components=1 && \
+      wget -qO - --no-check-certificate "https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz" | tar xz -C $SBT_HOME --strip-components=1 && \
       sbt sbtVersion
 
 # Define working directory
