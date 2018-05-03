@@ -16,7 +16,7 @@ ENV PATH=${PATH}:${JAVA_HOME}/bin
 
 # Scala
 ENV SCALA_VERSION 2.12.6
-ENV SBT_VERSION 1.1.2
+ENV SBT_VERSION 0.13.17
 ENV SBT_HOME /usr/local/sbt
 ENV PATH ${PATH}:${SBT_HOME}/bin
 
@@ -73,7 +73,7 @@ RUN \
 # Install sbt
 RUN \
       mkdir -p "$SBT_HOME" && \
-      wget -qO - --no-check-certificate "https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz" | tar xz -C $SBT_HOME --strip-components=1 && \
+      wget -qO - --no-check-certificate "https://piccolo.link/sbt-$SBT_VERSION.tgz" | tar xz -C $SBT_HOME --strip-components=1 && \
       sbt sbtVersion
 
 # Define working directory
