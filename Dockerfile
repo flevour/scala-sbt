@@ -9,15 +9,15 @@
 FROM openjdk:8u171-jdk-alpine3.8
 
 # Scala
-ENV SCALA_VERSION 2.12.7
-ENV SBT_VERSION 1.1.6
+ENV SCALA_VERSION 2.12.10
+ENV SBT_VERSION 1.3.3
 ENV SBT_HOME /usr/local/sbt
 ENV PATH ${PATH}:${SBT_HOME}/bin
 
 # Install base packages
 RUN apk update && apk upgrade && \
-    apk add curl wget bash tree tar && \
-    echo -ne "Alpine Linux 3.8 image. (`uname -rsv`)\n" >> /root/.built
+  apk add curl wget bash tree tar && \
+  echo -ne "Alpine Linux 3.8 image. (`uname -rsv`)\n" >> /root/.built
 
 # Install Scala
 ## Piping curl directly in tar
@@ -28,9 +28,9 @@ RUN \
 
 # Install sbt
 RUN \
-      mkdir -p "$SBT_HOME" && \
-      wget -qO - --no-check-certificate "https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz" | tar xz -C $SBT_HOME --strip-components=1 && \
-      sbt sbtVersion
+  mkdir -p "$SBT_HOME" && \
+  wget -qO - --no-check-certificate "https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz" | tar xz -C $SBT_HOME --strip-components=1 && \
+  sbt sbtVersion
 
 # Define working directory
 WORKDIR /app
@@ -43,4 +43,3 @@ RUN \
   touch src/main/scala/scratch.scala && \
   sbt compile && \
   rm -rf *
-
