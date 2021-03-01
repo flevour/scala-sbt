@@ -5,7 +5,7 @@ This repository contains **Dockerfile** of [Scala](http://www.scala-lang.org) an
 
 ## Base Docker Image ##
 
-* [openjdk](https://hub.docker.com/_/openjdk)
+* [adoptopenjdk](https://hub.docker.com/_/adoptopenjdk)
 
 
 ## Change versions ##
@@ -13,7 +13,7 @@ This repository contains **Dockerfile** of [Scala](http://www.scala-lang.org) an
 In order to build a new image just change the values in `.circleci/config.yml`:
 
 ```
-      OPENJDK_VERSION: 8u171-jdk-alpine3.8
+      JDK_VERSION: 8u171-jdk-alpine3.8
       SCALA_VERSION: 2.12.10
       SBT_VERSION: 1.3.4
 ```
